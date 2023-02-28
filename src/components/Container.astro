@@ -1,0 +1,24 @@
+---
+export interface Props {
+    fullWidth?: boolean
+}
+
+const {fullWidth = true} = Astro.props;
+---
+
+<div class={`container ${fullWidth ? "full-width": ""}`}>
+    <slot />
+</div>
+<style>
+    .container {
+        line-height: 1.6;
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    }
+    .full-width {
+        width: calc(60ch - 2rem);
+    }
+    
+</style>

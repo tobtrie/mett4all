@@ -1,0 +1,41 @@
+---
+export interface Props {
+    title?: string;
+    enableSupport?: boolean
+}
+
+const { title, enableSupport = true } = Astro.props;
+---
+<nav class="navbar">
+    <div class="logo">
+        {enableSupport && <a href="/unterstuetzung">Unterstützung</a>}
+    </div>
+    <h1 class="text-gradient">{title ?? "Logo"}</h1>
+    <div class="socials">
+        Socials with a super large text that could move the title to the left
+    </div>
+</nav>
+<style>
+    .navbar {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin: 0.5rem 1rem 0 1rem;
+        align-items: center;
+    }
+    .socials {
+        text-align: right;
+    }
+    .logo {
+        \\ TODO is this necessary?
+    }
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+		text-align: center;
+	}
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>

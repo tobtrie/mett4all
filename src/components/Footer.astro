@@ -1,0 +1,27 @@
+<div class="footer">
+    <a class="item" href="/impressum">Impressum</a>
+    <a class="item" href="/about">Über uns</a>
+</div>
+<style>
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem 0;
+        background: #23231A;
+        border-top: solid 2px #e3b45c;
+    }
+    .item {
+        text-decoration: none;
+        color: white;
+        padding-bottom: 1px;
+        transition: color 0.2s ease, border-bottom 0.2s ease;
+    }
+    .item:hover {
+        cursor: pointer;
+        color: #e3b45c;
+        border-bottom: 1px solid #e3b45c;
+        padding-bottom: 0;
+    }
+</style>

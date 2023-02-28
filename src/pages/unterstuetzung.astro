@@ -1,0 +1,74 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro"
+
+---
+
+<Layout title="Unterstützung" enableSupport={false}>
+    <Container>
+        <p class="intro">
+            Wir sind kontinuierlich auf der Suche nach Spenden, die uns bei unserer Arbeit unterstützen und somit zum Gelingen unserer Vereinsarbeit und Konzerte beitragen.
+            Im Zuge der Vereinsarbeit fallen immer wieder Bürokosten an für Papier, Toner oder Neuanschaffungen wie z.B. Laserdrucker, sowie Druckkosten für Flyer/Plakate und Naturalien/Getränke für Bands für die Konzerte.
+            Sachspenden jeglicher Art, sofern nicht direkt für den Verein oder die Konzerte nutzbar, fließen in eine Tombola. Die Einnahmen kommen dem Verein zugute, wovon der Verein wiederum Neuanschaffungen tätigen kann – entweder für das Büro, die Konzerte
+        </p>
+        <p>
+            Wir bieten mehrere Möglichkeiten an, wie Sie uns unterstützen können:
+            <ol>
+                <li>
+                    <section>
+                        <header><strong>Die klassische finanzielle Unterstützung</strong></header>
+                        <p>
+                            Für eine direkte Geldspende nutzen Sie doch unsere Bankverbindung <br />
+                        </p>
+                        <p>
+                            Empfänger: Mett(4)all  e.V. <br />
+                            IBAN: <br />
+                            BIC: GENODED1GDL <br />
+                            Verwendungszweck: Spende + Name + Adresse + PLZ + Wohnort <br />
+                            (Vollständiger Name und Adresse dienen zur Ausstellung einer Zuwendungsbescheinigung!)
+                        
+                        
+                        </p>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <header><strong>Sachspenden</strong></header>
+                        <p>
+                            Sie haben in Ihrer Firma Werbemittel / Werbegeschenke die Sie
+                            nicht mehr benötigen? Oder Sie möchten einen Hauptpreis zu
+                            unserer Tombola zu steuern? Dann schicken Sie uns entweder
+                            einfach ein Päckchen / Paket unter der folgenden Adresse zu:
+                        </p>
+                        <p>
+                            Mett(4)all  e.V. <br />
+                            Kromsteg 40<br />
+                            47638 Straelen<br />
+                        </p>
+                        <p>
+                            Möchten Sie die Spende nicht verschicken, können wir
+                            innerhalb des Ruhrgebietes eine Abholung organisieren.
+                            Hierzu sollten Sie mit unserem Schatzmeister
+                            Jan Linßen unter
+                            <a href="mailto:schatzmeister@mett4all.de">schatzmeister@mett4all.de</a>
+                            in Kontakt treten.</p>
+                    </section>
+                </li>
+            </ol>
+        </p>
+    </Container>
+</Layout>
+
+<style>
+    .intro {
+        text-align: justify;
+    }
+    a {
+        text-decoration: none;
+        color: var(--primary);
+        transition: color 0.2s ease;
+    }
+    a:hover {
+        color: var(--primary-light);
+    }
+</style>
