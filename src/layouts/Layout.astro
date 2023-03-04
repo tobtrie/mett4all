@@ -3,11 +3,12 @@ import Footer from '../components/Footer.astro';
 import Partner from '../components/Partner.astro';
 import Topnav from '../components/Topnav.astro'; "../components/Topnav.astro";
 export interface Props {
-	title: string;
+	title?: string;
 	enableSupport?: boolean;
+	isRoot?: boolean;
 }
 
-const { title, enableSupport } = Astro.props;
+const { title, enableSupport, isRoot } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,13 +16,13 @@ const { title, enableSupport } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/Mett4All-Logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title ?? "Mett4All e.V."}</title>
 	</head>
 	<body class="body">
 		<header class="header">
-			<Topnav title={title} enableSupport={enableSupport}/>
+			<Topnav title={title} enableSupport={enableSupport} isRoot={isRoot}/>
 		</header>
 		<main class="main">
 			<slot />
@@ -42,15 +43,24 @@ const { title, enableSupport } = Astro.props;
 		flex: 1;
 		margin: auto;
 		margin-top: 1.5rem;
-		max-width: 60ch;
+		max-width: 150ch;
+	}
+	@media screen and (min-width: 600px) {
+		.main {
+			max-width: 600ch;
+		}
 	}
 </style>
 <style is:global>
+	/* * {
+		outline: solid;
+	} */
 	:root {
 		--accent: 124, 58, 237;
 		--primary: #bf974d;
 		--primary-light:#e3b45c;
 		--accent-gradient: linear-gradient(45deg, #bf974d, #e3b45c 30%, white 60%);
+		--content-width: 100ch;
 	}
 	html {
 		font-family: system-ui, sans-serif;

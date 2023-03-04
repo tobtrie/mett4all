@@ -2,25 +2,30 @@
 export interface Props {
     title?: string;
     enableSupport?: boolean
+    isRoot?: boolean
 }
 
-const { title, enableSupport = true } = Astro.props;
+const { title, enableSupport = false, isRoot = false } = Astro.props;
 ---
 <nav class="navbar">
     <div class="logo">
-        {enableSupport && <a href="/unterstuetzung">Unterstützung</a>}
+        {!isRoot && <a href="/"><img  src="/Mett4All-Logo-Text.svg" height="50px" /></a>}
     </div>
-    <h1 class="text-gradient">{title ?? "Logo"}</h1>
+    {title ? <h1 class="text-gradient">{title}</h1> : <img  src="/Mett4All-Logo-Text.svg" height="150px" />}
     <div class="socials">
-        Socials with a super large text that could move the title to the left
+        <!-- Socials with a super large text that could move the title to the left -->
     </div>
 </nav>
 <style>
     .navbar {
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        margin: 0.5rem 1rem 0 1rem;
-        align-items: center;
+        margin: 0;
+        justify-items: center;
+        /* align-items: baseline; */
+    }
+    .navbar > * {
+        width: 100%;
     }
     .socials {
         text-align: right;

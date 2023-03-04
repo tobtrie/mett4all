@@ -1,13 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Container from '../components/Container.astro';
 ---
 
-<Layout >
-		<Container>
-			TODO SLOGAN?
-		</Container>
+<Layout isRoot={true}>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
@@ -33,11 +29,6 @@ import Container from '../components/Container.astro';
 </Layout>
 
 <style>
-	.main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
@@ -49,5 +40,6 @@ import Container from '../components/Container.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
+		margin: 0;
 	}
 </style>
