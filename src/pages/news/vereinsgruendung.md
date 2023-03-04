@@ -1,7 +1,8 @@
 ---
+layout: ../../layouts/News.astro
 title: Vereinsgrüdnung
 date: 01.01.2023
-layout: ../../layouts/News.astro
+description: Nun ist es endlich soweit. Wir können euch stolz berichten, dass wir nun als Verein auftreten werden. Nach der Idee 2020 ...
 ---
 
 Nun ist es endlich soweit. Wir können euch stolz berichten, dass wir nun als Verein auftreten werden.

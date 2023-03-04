@@ -1,23 +1,25 @@
 ---
 import Layout from "../../layouts/Layout.astro"
-
+const posts = await Astro.glob("./*.md");
 ---
 
 <Layout title="News">
     <div class="layout">
-        <div class="card">
-            <a href="/news/vereinsgruendung">
-                <div class="card__picture">
-                    <span class="date">01.01.2023</span>
-                    <strong class="title">Vereinsgründung</strong>
+        {
+            posts.map((post) => (
+                <div class="card">
+                    <a href="/news/vereinsgruendung">
+                        <div class="card__picture">
+                            <span class="date">{post.frontmatter.date}</span>
+                            <strong class="title">{post.frontmatter.title}</strong>
+                        </div>
+                        <p class="card_description">
+                            {post.frontmatter.description}
+                        </p>
+                    </a>
                 </div>
-                <p class="card_description">
-                    Nun ist es endlich soweit. Wir können euch
-                    stolz berichten, dass wir nun als Verein
-                    auftreten werden. Nach der Idee 2020 ...
-                </p>
-            </a>
-        </div>
+            ))
+        }
 
     </div>
 </Layout>
