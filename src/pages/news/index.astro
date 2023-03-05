@@ -1,17 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 const posts = await Astro.glob("./*.md");
+posts.sort((a, b) => new Date(a.frontmatter.date).getTime() - new Date(b.frontmatter.date).getTime() )
 ---
 
 <Layout title="News">
     <div class="layout">
         {
-            posts.map((post) => (
+            posts.filter((post) => !post.frontmatter.draft).map((post) => (
                 <div class="card">
-                    <a href="/news/vereinsgruendung">
+                    <a href={post.url}>
                         <div class="card__picture">
                             <span class="date">{post.frontmatter.date}</span>
-                            <strong class="title">{post.frontmatter.title}</strong>
+                            <strong class="title" title={post.frontmatter.title}>{post.frontmatter.title}</strong>
                         </div>
                         <p class="card_description">
                             {post.frontmatter.description}
@@ -26,15 +27,13 @@ const posts = await Astro.glob("./*.md");
 <style>
     .layout {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(24ch, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
-		margin: 0;
-        height: 100%;
-        width: 100%;
+		margin: 1rem;
     }
     .card {
-        list-style: none;
+        overflow: hidden;
 		display: flex;
 		padding: 0.25rem;
 		background-color: white;
@@ -61,7 +60,7 @@ const posts = await Astro.glob("./*.md");
 	}
     .card__picture {
         height: 200px;
-        background-image: url("/Mett4All-Logo.svg");
+        background-image: url("/images/Mett4All-Logo.svg");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -76,6 +75,10 @@ const posts = await Astro.glob("./*.md");
     }
     .title {
         background-color: rgba(207, 207, 207, 0.7);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0.2rem 0.4rem;
     }
     .card_description {
         text-align: justify;

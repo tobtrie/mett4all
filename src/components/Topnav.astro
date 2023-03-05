@@ -1,19 +1,23 @@
 ---
 export interface Props {
     title?: string;
-    enableSupport?: boolean
     isRoot?: boolean
 }
 
-const { title, enableSupport = false, isRoot = false } = Astro.props;
+const { title, isRoot = false } = Astro.props;
 ---
 <nav class="navbar">
     <div class="logo">
-        {!isRoot && <a href="/"><img  src="/Mett4All-Logo-Text.svg" height="50px" /></a>}
+        {!isRoot && <a href="/"><img  src="/images/Mett4All-Logo-Text.svg" height="50px" /></a>}
     </div>
-    {title ? <h1 class="text-gradient">{title}</h1> : <img  src="/Mett4All-Logo-Text.svg" height="150px" />}
+    {title ? <h1 class="text-gradient">{title}</h1> : <img  src="/images/Mett4All-Logo-Text.svg" height="150px" />}
     <div class="socials">
-        <!-- Socials with a super large text that could move the title to the left -->
+        <a href="https://www.instagram.com/mett4all/">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="/" class="spotify">
+            <i class="fa-brands fa-spotify"></i>
+        </a>
     </div>
 </nav>
 <style>
@@ -22,13 +26,21 @@ const { title, enableSupport = false, isRoot = false } = Astro.props;
         grid-template-columns: repeat(3,1fr);
         margin: 0;
         justify-items: center;
-        /* align-items: baseline; */
     }
     .navbar > * {
         width: 100%;
     }
+    .logo {
+        margin-left: 1rem;
+    }
     .socials {
         text-align: right;
+        font-size: 1.5rem;
+        display: flex;
+        gap: 0.5rem;
+        justify-content: flex-end;
+        margin-top: 1rem;
+        margin-right: 1rem;
     }
 	h1 {
 		font-size: 3rem;
@@ -43,5 +55,11 @@ const { title, enableSupport = false, isRoot = false } = Astro.props;
     }
     a:hover {
         color: var(--primary);
+    }
+    .spotify {
+        cursor: not-allowed;
+    }
+    .spotify:hover {
+        color: inherit;
     }
 </style>

@@ -4,11 +4,10 @@ import Partner from '../components/Partner.astro';
 import Topnav from '../components/Topnav.astro'; "../components/Topnav.astro";
 export interface Props {
 	title?: string;
-	enableSupport?: boolean;
 	isRoot?: boolean;
 }
 
-const { title, enableSupport, isRoot } = Astro.props;
+const { title, isRoot } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,13 +15,16 @@ const { title, enableSupport, isRoot } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/Mett4All-Logo.svg" />
+		<link rel="icon" type="image/svg+xml" href="/images/Mett4All-Logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title ?? "Mett4All e.V."}</title>
+		<link href="/css/fontawesome.css" rel="stylesheet">
+		<link href="/css/brands.css" rel="stylesheet">
+		<link href="/css/solid.css" rel="stylesheet">
 	</head>
 	<body class="body">
 		<header class="header">
-			<Topnav title={title} enableSupport={enableSupport} isRoot={isRoot}/>
+			<Topnav title={title} isRoot={isRoot}/>
 		</header>
 		<main class="main">
 			<slot />

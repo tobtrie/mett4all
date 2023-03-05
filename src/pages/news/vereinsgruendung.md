@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/News.astro
+draft: false
 title: Vereinsgrüdnung
-date: 01.01.2023
+date: 01.02.2023
 description: Nun ist es endlich soweit. Wir können euch stolz berichten, dass wir nun als Verein auftreten werden. Nach der Idee 2020 ...
 ---
 
