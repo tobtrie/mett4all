@@ -1,12 +1,14 @@
 ---
 export interface Props {
-    fullWidth?: boolean
+    fullWidth?: boolean;
+    class?: string;
 }
 
-const {fullWidth = true} = Astro.props;
+const {class: className, fullWidth = true} = Astro.props;
+
 ---
 
-<div class={`container ${fullWidth ? "full-width": ""}`}>
+<div class={`container ${fullWidth ? "full-width": ""} ${className}`}>
     <slot />
 </div>
 <style>
