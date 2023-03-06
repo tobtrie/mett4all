@@ -27,6 +27,7 @@ const { title, isRoot } = Astro.props;
 			<Topnav title={title} isRoot={isRoot}/>
 		</header>
 		<main class="main">
+			<div class="background"/>
 			<slot />
 		</main>
 		<footer>
@@ -41,6 +42,19 @@ const { title, isRoot } = Astro.props;
 		flex-direction: column;
 		min-height: 100vh;
 	}
+	.background {
+        position: fixed;
+        background-image: url("/images/Mett4All-Logo.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: calc(100% - 5vh - 2rem);
+        width: 100%;
+        opacity: 0.5;
+        top: 5vh;
+        left: 0;
+        z-index: -1;
+    }
 	.main {
 		flex: 1;
 		margin: auto;
@@ -61,7 +75,7 @@ const { title, isRoot } = Astro.props;
 		--accent: 124, 58, 237;
 		--primary: #bf974d;
 		--primary-light:#e3b45c;
-		--accent-gradient: linear-gradient(45deg, #bf974d, #e3b45c 30%, white 60%);
+		--accent-gradient: linear-gradient(45deg, rgba(191, 151, 77, 0.6), rgba(227, 180, 92, 0.6) 30%, rgba(255, 255, 255, 0.6) 60%);
 		--content-width: 100ch;
 	}
 	html {
