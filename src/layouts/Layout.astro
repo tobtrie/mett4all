@@ -69,9 +69,11 @@ const { title, isRoot } = Astro.props;
 	}
 </style>
 <style is:global>
-	/* * {
-		outline: solid;
-	} */
+	@font-face {
+		font-family: "Metal Mania";
+		src: url("/webfonts/MetalMania-Regular.ttf");
+	}
+
 	:root {
 		--accent: 124, 58, 237;
 		--primary: #bf974d;
