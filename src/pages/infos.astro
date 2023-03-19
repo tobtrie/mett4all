@@ -1,5 +1,6 @@
 ---
 import Container from "../components/Container.astro";
+import { FacebookLink, InstagramLink } from "../constants";
 import Layout from "../layouts/Layout.astro"
 
 ---
@@ -11,13 +12,9 @@ import Layout from "../layouts/Layout.astro"
             <details>
                 <summary>Datum / Location</summary>
                 <div>
-                    Das Festival <strong>Mett(4)all</strong> findet
-                    am <strong>23.09.2023</strong> im Waldfreibad Walbeck statt.
+                    Das Festival <span class="highlight">Mett(4)all</span> findet
+                    am <span class="highlight">23.09.2023</span> im <span class="highlight">Waldfreibad Walbeck</span> statt.
                 </div>
-            </details>
-            <details>
-                <summary>Altersbeschränkung</summary>
-                <div>Das Festival ist für alle Personen, die ihr 17 Lebensjahr vollendet haben.</div>
             </details>
             <details>
                 <summary>Anreise</summary>
@@ -27,26 +24,77 @@ import Layout from "../layouts/Layout.astro"
                         <div>
                             Am Freibad 24<br />
                             47608 Geldern Walbeck<br />
-                            Es existiert ein öffentlicher Parkplatz
+                            <p>
+                                Parkplätze sind vor Ort reichlich vorhanden.
+                                Wir bieten die Parkplätze kostenfrei an, unser Verein würde sich aber über eine Spende freuen.
+                            </p>
+                            <dl>
+                                <dt>A40</dt>
+                                <dd>
+                                    Aus Richtung Ruhrgebiet fahrt ihr am besten
+                                    über die Abfahrt 4 Straelen/ Wachtendonk, von
+                                    dort aus fahren sie ca. 20 min über die Landstr.
+                                    zum Gelände.
+                                </dd>
+                                <dt>A57</dt>
+                                <dd>
+                                    Aus dem Kreis Kleve / Wesel fahrt ihr über die 
+                                    Abfahrt 3 Goch über Weeze/Kevelaer  (ca 30 min ab Goch)
+                                </dd>
+                                <dt>A61</dt>
+                                <dd>
+                                    Aus Richtung Viersen fahrt ihr über die Abfahrt 2
+                                    Kaldenkirchen Richtung Straelen (ca. 30 min)
+                                </dd>
+                            </dl>
                         </div>
                     </section>
                     <section>
                         <h4>Mit dem Bus</h4>
                         <div>
                             Bushaltestelle Waldfreibad Geldern <br />
-                            Buslinie RUF 35 ab Geldern-Bahnhof
+                            Buslinie RUF 35 ab Geldern-Bahnhof <br />
+                            <p>
+                                Im Ortskern 47608 Geldern befindet sich
+                                ein Bahnhof, von dort aus gelangt ihr
+                                zum Veranstaltungsort Waldfreibad Walbeck
+                                (ca. 30 min). Beachtet die Fahrpläne am Wochenende.
+                            </p>
                         </div>
                     </section>
                 </div>
             </details>
             <details>
-                <summary>Übernachtung</summary>
+                <summary>Bezahlen</summary>
                 <div>
-                    <ul>
-                        <li>Wohnmobil - Link an den Campingplatz</li>
-                        <li>Zeltplatz Zustatztickets (5€ p.P.)</li>
-                        <li>Parkplatz (Spenden werden gerne entgegen genommen)</li>
-                    </ul>
+                    Die von uns angebotenen Speisen
+                    und Getränke können mit unseren
+                    Verzehrkarten bezahlt werden. Diese
+                    erhaltet ihr an der Kasse in verschiedenen
+                    Stückelungen. Nicht verbrauchtes Guthaben
+                    kann nicht ausgezahlt werden.
+                </div>
+            </details>
+            <details>
+                <summary>Altersbeschränkung</summary>
+                <div>Das Festival ist für alle Personen, die ihr 17 Lebensjahr vollendet haben.</div>
+            </details>
+            <details>
+                <summary>Übernachtung / Camping</summary>
+                <div>
+                    <section>
+                        <h4>Wohnmobile</h4>
+                        Wohnmobilplätze sind vor Ort verfügbar
+                        und können direkt dort gebucht werden.
+                        Preisliste könnt ihr
+                        <a href="https://neu.waldfreibad-walbeck.de/" target="_blank">hier</a> einsehen.
+                    </section>
+                    <section>
+                        <h4>Zelten</h4>
+                        Es wird auch in Zeltplatz angeboten werden. Dafür wird ein Zustatzticket angeboten.
+                        <!-- TODO URL zur Ticketseite -->
+                        Für weitere Informationen zum Ticket schaut bitte bei den <a href="#">Tickets</a> vorbei.
+                    </section>
                 </div>
             </details>
         </Container>
@@ -57,7 +105,93 @@ import Layout from "../layouts/Layout.astro"
                 <div>
                     Der Ticketverkauf wurde noch nicht gestartet.
                     Wenn der Ticketverkauf gestartet wird erfahrt
-                    ihr in unseren <a href="/news">News</a> oder auf unserem <a href="https://www.instagram.com/mett4all.festival">Instagram Account</a>.
+                    ihr in unseren <a href="/news">News</a> oder
+                    auf unserem <a href={InstagramLink} target="_blank">Instagram</a>
+                    oder <a href={FacebookLink} target="_blank">Facebook</a> Account.
+                </div>
+            </details>
+            <details>
+                <summary>Festivalbändchen</summary>
+                <div>
+                    Dein Festivalbändchen ist im Ticketpreis mit
+                    inbegriffen. Du erhälst es bei deiner Ankunft.
+                </div>
+            </details>
+        </Container>
+        <Container>
+            <h2>FAQ</h2>
+            <details>
+                <summary>Drogen / Alkohol</summary>
+                <div>
+                    Illegale Substanzen sind bei uns
+                    nicht erwünscht. Auch das Mitbringen von Alkohol
+                    ist untersagt. Wir bieten euch dieses Festival an, weil
+                    wir es über die Getränkeeinnahmen finanzieren
+                    können. Also bringt Durst mit, wir versorgen euch!
+                </div>
+            </details>
+            <details>
+                <summary>Essen</summary>
+                <div>
+                    Zu den rauen Mengen <span class="highlight">Mett</span>, werden wir 
+                    verschiedene Essensangebote haben, wobei
+                    für jeden etwas dabei sein wird. Von Veganer,
+                    Vegetarier oder unseren lieblingen Omnivoren.
+
+                </div>
+            </details>
+            <details>
+                <summary>Geldautomaten</summary>
+                <div>
+                    Im Ort Walbeck sind die Sparkasse
+                    und Volksbank ca. 1,5 km von der
+                    Veranstaltung entfernt.
+                </div>
+            </details>
+            <details>
+                <summary>Glasflaschen</summary>
+                <div>
+                    Glasflaschen sind aus Sicherheitsgründen
+                    auf dem kompletten Gelände verboten. Bitte
+                    haltet euch daran.
+                </div>
+            </details>
+            <details>
+                <summary>Jugendschutz</summary>
+                <div>
+                    Aus Jugendschutzgründen dürfen wir leider
+                    nur Gäste ab 18 Jahren auf das Gelände lassen
+                    (Ausweis mitbringen!). Ausnahme: ein Erziehungsberechtigter
+                    oder eine sogenannte „erziehungsbeauftragte Person“
+                    ist dabei. Ein Nachweis (<a href="/muttizettel.pdf" target="_blank">Jugendschutzformular</a>) ist erforderlich.
+                </div>
+            </details>
+            <details>
+                <summary>Rassismus</summary>
+                <div>
+                    Rassismus und Extremismus in jedweder Form,
+                    ob rechts oder links orientiert, wird bei
+                    uns nicht toleriert.
+                </div>
+            </details>
+            <details>
+                <summary>Security</summary>
+                <div>
+                    Es ist ganz einfach: Seid nett zu ihnen, dann sind Sie nett zu Euch!
+                </div>
+            </details>
+            <details>
+                <summary>Toiletten</summary>
+                <div>Diese sind auf dem Festivalgelände in ausreichender Anzahl vorhanden.</div>
+            </details>
+            <details>
+                <summary>Waffen</summary>
+                <div>Waffen sind <strong>nicht</strong> erlaubt, also lasst das Zeug am besten gleich daheim!</div>
+            </details>
+            <details>
+                <summary>Zigaretten</summary>
+                <div>
+                    Die Raucher müssen sich ihre Kippen selber mitbringen, weil wir auf dem Gelände keine anbieten.
                 </div>
             </details>
         </Container>

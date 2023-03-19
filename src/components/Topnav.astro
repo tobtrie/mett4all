@@ -1,4 +1,6 @@
 ---
+import { FacebookLink, InstagramLink } from '../constants';
+
 export interface Props {
     title?: string;
     isRoot?: boolean
@@ -12,10 +14,10 @@ const { title, isRoot = false } = Astro.props;
     </div>
     {title ? <h1 class="text-gradient">{title}</h1> : <img  src="/images/Mett4All-Logo-Text.svg" height="150px" />}
     <div class="socials">
-        <a href="https://www.instagram.com/mett4all.festival" target="_blank">
+        <a href={InstagramLink} target="_blank">
             <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://www.facebook.com/profile.php?id=100089882888068" target="_blank">
+        <a href={FacebookLink} target="_blank">
             <i class="fa-brands fa-facebook"></i>
         </a>
         <!-- <a href="/" class="spotify">
