@@ -93,6 +93,14 @@ const { title, isRoot } = Astro.props;
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+	a {
+		text-decoration: none;
+		color: var(--primary);
+	}
+	
+	a:hover {
+		text-decoration: underline;
+	}
 
 	.text-gradient {
 		background-image: var(--accent-gradient);

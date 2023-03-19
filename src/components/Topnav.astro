@@ -14,10 +14,10 @@ const { title, isRoot = false } = Astro.props;
     </div>
     {title ? <h1 class="text-gradient">{title}</h1> : <img  src="/images/Mett4All-Logo-Text.svg" height="150px" />}
     <div class="socials">
-        <a href={InstagramLink} target="_blank">
+        <a class="social_link" href={InstagramLink} target="_blank">
             <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href={FacebookLink} target="_blank">
+        <a class="social_link" href={FacebookLink} target="_blank">
             <i class="fa-brands fa-facebook"></i>
         </a>
         <!-- <a href="/" class="spotify">
@@ -54,9 +54,9 @@ const { title, isRoot = false } = Astro.props;
 		text-align: center;
         font-family: "Metal Mania";
 	}
-    a {
+    .social_link {
         text-decoration: none;
-        color: inherit;
+        color: black;
         transition: color 0.2s ease;
     }
     a:hover {
