@@ -1,0 +1,80 @@
+---
+export interface Props {
+    name: string;
+    facebook?: string;
+    spotify?: string;
+    instagram?: string;
+    website?: string;
+    imageUrl?: string;
+}
+
+const {name, facebook, spotify, instagram, website, imageUrl = "/images/Waldfreibad_Logo.png"} = Astro.props;
+---
+
+<li class="artist">
+    <header>
+        <div class="artist__image" style={`background-image: url(${imageUrl})`}>
+            <span class="artist__name">{name}</span>
+        </div>
+    </header>
+    <div class="artist__socials">
+        {facebook && <a class="social" href={facebook} target="_blank">
+            <i class="fa-brands fa-facebook"/>
+        </a>}
+        {spotify && <a class="social" href={spotify} target="_blank">
+            <i class="fa-brands fa-spotify"/>
+        </a>}
+        {instagram && <a class="social" href={instagram} target="_blank">
+            <i class="fa-brands fa-instagram"/>
+        </a>}
+        {website && <a class="social" href={website} target="_blank">
+            <i class="fa-regular fa-globe"/>
+        </a>}
+    </div>
+</li>
+
+<style>
+    .artist {
+        max-width: 50ch;
+        width: 100%;
+        list-style: none;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 0.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    }
+    .artist__image {
+        height: 250px;
+        margin: auto;
+        display: flex;
+        align-items: flex-end;
+        border-radius: 0.4rem;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .artist__name {
+        font-family: "Metal Mania", sans-serif;
+        flex: 1;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    .artist__socials {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+        justify-content: space-evenly;
+        font-size: 1.1rem;
+        padding-bottom: 0.5rem;
+    }
+    .social {
+		color: inherit;
+        transition: color 0.2s ease;
+    }
+    .social:hover {
+        color: var(--primary);
+        cursor: pointer;
+    }
+</style>
