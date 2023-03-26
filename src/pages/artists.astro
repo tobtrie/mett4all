@@ -1,11 +1,15 @@
 ---
-import Artist from "../components/Artist.astro";
+// import Artist from "../components/Artist.astro";
+import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro"
 
 ---
 
 <Layout title="Artists" class="main">
-    <ul role="link" class="artists">
+    <Container class="height" fullWidth={false}>
+        Comming soon...
+    </Container>
+    <!-- <ul role="link" class="artists">
         <Artist
             name="Artistname"
             facebook="#"
@@ -46,13 +50,18 @@ import Layout from "../layouts/Layout.astro"
             spotify="#"
             website="#"
         />
-    </ul>
+    </ul> -->
 </Layout>
 
 <style>
     .main {
         width: 100%;
         transition: width 3s ease;
+    }
+    .height {
+        padding: 2rem;
+        text-align: center;
+        opacity: 0.9;
     }
     .artists {
         display: grid;
