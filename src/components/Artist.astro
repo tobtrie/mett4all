@@ -6,31 +6,37 @@ export interface Props {
     instagram?: string;
     website?: string;
     imageUrl?: string;
+    youtube?: string;
+    class?: string
 }
 
-const {name, facebook, spotify, instagram, website, imageUrl = "/images/Waldfreibad_Logo.png"} = Astro.props;
+const {name, facebook, spotify, instagram, website, youtube, class: className, imageUrl = "/images/Waldfreibad_Logo.png"} = Astro.props;
 ---
 
 <li class="artist">
     <header>
-        <div class="artist__image" style={`background-image: url(${imageUrl})`}>
-            <span class="artist__name">{name}</span>
+        <div class={className + " artist__image"} style={`background-image: url(${imageUrl})`}>
+            <div class="artist__name">{name}</div>
+            <div class="artist__socials">
+                {website && <a class="social" href={website} target="_blank">
+                    <i class="fa-regular fa-globe"/>
+                </a>}
+                {spotify && <a class="social" href={spotify} target="_blank">
+                    <i class="fa-brands fa-spotify"/>
+                </a>}
+                {instagram && <a class="social" href={instagram} target="_blank">
+                    <i class="fa-brands fa-instagram"/>
+                </a>}
+                {youtube && <a class="social" href={youtube} target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                    </a>}
+                {facebook && <a class="social" href={facebook} target="_blank">
+                    <i class="fa-brands fa-facebook"/>
+                </a>}
+            </div>
         </div>
     </header>
-    <div class="artist__socials">
-        {facebook && <a class="social" href={facebook} target="_blank">
-            <i class="fa-brands fa-facebook"/>
-        </a>}
-        {spotify && <a class="social" href={spotify} target="_blank">
-            <i class="fa-brands fa-spotify"/>
-        </a>}
-        {instagram && <a class="social" href={instagram} target="_blank">
-            <i class="fa-brands fa-instagram"/>
-        </a>}
-        {website && <a class="social" href={website} target="_blank">
-            <i class="fa-regular fa-globe"/>
-        </a>}
-    </div>
+    
 </li>
 
 <style>
@@ -50,31 +56,33 @@ const {name, facebook, spotify, instagram, website, imageUrl = "/images/Waldfrei
         height: 250px;
         margin: auto;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
         border-radius: 0.4rem;
         text-align: center;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
     }
     .artist__name {
         font-family: "Metal Mania", sans-serif;
-        flex: 1;
         background-color: rgba(255, 255, 255, 0.5);
     }
     .artist__socials {
         display: flex;
+        background-color: rgba(255, 255, 255, 0.5);
         flex-direction: row;
         gap: 0.25rem;
         justify-content: space-evenly;
         font-size: 1.1rem;
-        padding-bottom: 0.5rem;
+        padding: 0.25rem;
     }
     .social {
 		color: inherit;
         transition: color 0.2s ease;
     }
     .social:hover {
-        color: var(--primary);
+        color: #b77700;
         cursor: pointer;
     }
 </style>
