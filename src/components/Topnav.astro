@@ -20,11 +20,15 @@ const { title, isRoot = false } = Astro.props;
         <a class="social_link" href={FacebookLink} target="_blank">
             <i class="fa-brands fa-facebook"></i>
         </a>
-        <a class="social_link" href="https://open.spotify.com/playlist/6RdZQGdmmywnTkzLSNZfiD?si=S5CBR3dnRLKFakGN6i0zVQ" target="_blank">
+        <a id="spotify-playlist" class="social_link hide" href="https://open.spotify.com/playlist/6RdZQGdmmywnTkzLSNZfiD?si=S5CBR3dnRLKFakGN6i0zVQ" target="_blank">
             <i class="fa-brands fa-spotify"></i>
         </a>
     </div>
 </nav>
+<script>
+    import { hideComponent } from "../scripts/hideComponent"
+    hideComponent("spotify-playlist", "hide");
+</script>
 <style>
     .navbar {
         display: grid;
