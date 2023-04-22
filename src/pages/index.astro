@@ -1,14 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Container from '../components/Container.astro';
 ---
 
 <Layout isRoot={true}>
 	<ul role="list" class="link-card-grid">
-		<!-- <Card
-			title="Tickets"
-			body="Werde Teil und erlebe das Mett4All Festival Haut nah."
-		/> -->
+		<span id="ticket-sale" class="hide-ticket-sale">
+			<Card
+				title="Tickets"
+				body="Werde Teil und erlebe das Mett4All Festival Haut nah."
+				href="https://mett4all.ticket.io/"
+			/>
+		</span>
 		<Card
 			href="/artists"
 			title="Artists"
@@ -25,7 +29,45 @@ import Card from '../components/Card.astro';
 			body="Bleib auf dem laufenden mit den aktuellen News zum Festival"
 		/>
 	</ul>
+	<Container>
+		<p>Der Ticketstart beginnt in <strong id="ticket-start" class="ticket-start-countdown"/></p>
+	</Container>
 </Layout>
+
+<script>
+	import isBefore from "date-fns/isBefore";
+	const releaseTimestamp = new Date("2023-05-01T22:00:00Z");
+	function checkTicketStart() {
+		if(!isBefore(new Date(), releaseTimestamp)) {
+			const ticketSale: HTMLSpanElement | null = document.getElementById("ticket-sale");
+			ticketSale?.classList?.remove("hide-ticket-sale");
+		}
+	}
+	setInterval(checkTicketStart, 1000);
+	checkTicketStart();
+</script>
+
+<script>
+	import intervalToDuration from "date-fns/intervalToDuration";
+	import formatDuration from "date-fns/formatDuration";
+	import de from "date-fns/locale/de";
+	const releaseTimestamp = new Date("2023-05-01T22:00:00Z");
+
+	function updateTime() {
+		const duration = intervalToDuration({
+			start: new Date(),
+			end: releaseTimestamp
+		});
+		const span: HTMLSpanElement | null  = document.getElementById("ticket-start");
+		if(span === null) {
+			console.error("ticket-start span is not avialable");
+			return;
+		}
+		span.textContent = formatDuration(duration, {locale: de});
+	}
+	setInterval(updateTime, 1000);
+	updateTime();
+</script>
 
 <style>
 	h1 {
@@ -40,5 +82,11 @@ import Card from '../components/Card.astro';
 		gap: 1rem;
 		padding: 0;
 		margin: 0;
+		margin-bottom: 1rem;
+	}
+	.hide-ticket-sale {
+		display: none;
+	}
+	.ticket-start-countdown {
 	}
 </style>
