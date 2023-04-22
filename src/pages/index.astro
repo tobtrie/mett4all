@@ -1,50 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Container from '../components/Container.astro';
 ---
 
 <Layout isRoot={true}>
+	<div id="ticket-sale-start" class="ticket-sale-start">
+		<Card title="Ticketverkauf startet bald">
+			<div>
+				Der Ticketverkauf startet am <strong>01.05.2023</strong>. Das ist in <strong id="ticket-start" class="ticket-start-countdown"/>. Also haltet euch bereit.
+			</div>
+		</Card>
+	</div>
 	<ul role="list" class="link-card-grid">
-		<span id="ticket-sale" class="hide-ticket-sale">
+		<span id="ticket-sale" class="hide">
 			<Card
 				title="Tickets"
-				body="Werde Teil und erlebe das Mett4All Festival Haut nah."
 				href="https://mett4all.ticket.io/"
-			/>
+			>
+				Werde Teil und erlebe das Mett4All Festival Haut nah
+			</Card>
 		</span>
 		<Card
 			href="/artists"
 			title="Artists"
-			body="Bleib auf dem Laufenden mit dem Line-Up für 2023"
-		/>
+		>
+			Bleib auf dem Laufenden mit dem Line-Up für 2023
+		</Card>
 		<Card
 			href="/infos"
 			title="Infos"
-			body="Hole dir die neusten Informationen zum Festival"
-		/>
+		>
+			Hole dir die neusten Informationen zum Festival
+		</Card>
 		<Card
 			href="/news"
 			title="News"
-			body="Bleib auf dem laufenden mit den aktuellen News zum Festival"
-		/>
+		>
+			Bleib auf dem laufenden mit den aktuellen News zum Festival
+		</Card>
 	</ul>
-	<Container>
-		<p>Der Ticketstart beginnt in <strong id="ticket-start" class="ticket-start-countdown"/></p>
-	</Container>
+	
 </Layout>
 
 <script>
-	import isBefore from "date-fns/isBefore";
-	const releaseTimestamp = new Date("2023-05-01T22:00:00Z");
-	function checkTicketStart() {
-		if(!isBefore(new Date(), releaseTimestamp)) {
-			const ticketSale: HTMLSpanElement | null = document.getElementById("ticket-sale");
-			ticketSale?.classList?.remove("hide-ticket-sale");
-		}
-	}
-	setInterval(checkTicketStart, 1000);
-	checkTicketStart();
+	import {hideComponent, showComponentTilDate} from "../scripts/hideComponent";
+	hideComponent("ticket-sale", "hide");
+	showComponentTilDate("ticket-sale-start", "hide")
 </script>
 
 <script>
@@ -84,9 +85,11 @@ import Container from '../components/Container.astro';
 		margin: 0;
 		margin-bottom: 1rem;
 	}
-	.hide-ticket-sale {
-		display: none;
+	.ticket-sale-start {
+		max-width: 50ch;
+		margin-bottom: 1rem;
 	}
 	.ticket-start-countdown {
 	}
+
 </style>

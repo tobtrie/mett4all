@@ -1,11 +1,15 @@
 ---
 import Artist from "../../components/Artist.astro";
+import Container from "../../components/Container.astro";
 import Layout from "../../layouts/Layout.astro"
 
 ---
 
 <Layout title="Artists" class="main">
-    <ul role="link" class="artists">
+    <Container class="height" id="comming-soon">
+        Comming soon...
+    </Container>
+    <ul role="link" class="artists hide" id="artists">
         <Artist
             name="Avalanche Effect"
             facebook="https://www.facebook.com/AvalancheEffect"
@@ -114,6 +118,12 @@ import Layout from "../../layouts/Layout.astro"
         />
     </ul>
 </Layout>
+
+<script>
+    import { hideComponent, showComponentTilDate } from "../../scripts/hideComponent"
+    hideComponent("artists", "hide");
+    showComponentTilDate("comming-soon", "hide");
+</script>
 
 <style>
     .main {

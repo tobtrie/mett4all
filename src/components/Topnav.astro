@@ -20,9 +20,9 @@ const { title, isRoot = false } = Astro.props;
         <a class="social_link" href={FacebookLink} target="_blank">
             <i class="fa-brands fa-facebook"></i>
         </a>
-        <!-- <a href="/" class="spotify">
+        <a class="social_link" href="https://open.spotify.com/playlist/6RdZQGdmmywnTkzLSNZfiD?si=S5CBR3dnRLKFakGN6i0zVQ" target="_blank">
             <i class="fa-brands fa-spotify"></i>
-        </a> -->
+        </a>
     </div>
 </nav>
 <style>
@@ -44,6 +44,7 @@ const { title, isRoot = false } = Astro.props;
         display: flex;
         gap: 0.5rem;
         justify-content: flex-end;
+        align-items: baseline;
         margin-top: 1rem;
         margin-right: 1rem;
     }
@@ -61,11 +62,5 @@ const { title, isRoot = false } = Astro.props;
     }
     a:hover {
         color: var(--primary);
-    }
-    .spotify {
-        cursor: not-allowed;
-    }
-    .spotify:hover {
-        color: inherit;
     }
 </style>
