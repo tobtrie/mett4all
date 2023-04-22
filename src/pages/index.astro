@@ -4,28 +4,71 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout isRoot={true}>
+	<div id="ticket-sale-start" class="ticket-sale-start">
+		<Card title="Ticketverkauf startet bald">
+			<div>
+				Der Ticketverkauf startet am <strong>01.05.2023</strong>. Das ist in <strong id="ticket-start" class="ticket-start-countdown"/>. Also haltet euch bereit.
+			</div>
+		</Card>
+	</div>
 	<ul role="list" class="link-card-grid">
-		<!-- <Card
-			title="Tickets"
-			body="Werde Teil und erlebe das Mett4All Festival Haut nah."
-		/> -->
+		<span id="ticket-sale" class="hide">
+			<Card
+				title="Tickets"
+				href="https://mett4all.ticket.io/"
+			>
+				Werde Teil und erlebe das Mett4All Festival Haut nah
+			</Card>
+		</span>
 		<Card
 			href="/artists"
 			title="Artists"
-			body="Bleib auf dem Laufenden mit dem Line-Up für 2023"
-		/>
+		>
+			Bleib auf dem Laufenden mit dem Line-Up für 2023
+		</Card>
 		<Card
 			href="/infos"
 			title="Infos"
-			body="Hole dir die neusten Informationen zum Festival"
-		/>
+		>
+			Hole dir die neusten Informationen zum Festival
+		</Card>
 		<Card
 			href="/news"
 			title="News"
-			body="Bleib auf dem laufenden mit den aktuellen News zum Festival"
-		/>
+		>
+			Bleib auf dem laufenden mit den aktuellen News zum Festival
+		</Card>
 	</ul>
+	
 </Layout>
+
+<script>
+	import {hideComponent, showComponentTilDate} from "../scripts/hideComponent";
+	hideComponent("ticket-sale", "hide");
+	showComponentTilDate("ticket-sale-start", "hide")
+</script>
+
+<script>
+	import intervalToDuration from "date-fns/intervalToDuration";
+	import formatDuration from "date-fns/formatDuration";
+	import de from "date-fns/locale/de";
+	const releaseTimestamp = new Date("2023-05-01T22:00:00Z");
+
+	function updateTime() {
+		const duration = intervalToDuration({
+			start: new Date(),
+			end: releaseTimestamp
+		});
+		const span: HTMLSpanElement | null  = document.getElementById("ticket-start");
+		if(span === null) {
+			console.error("ticket-start span is not avialable");
+			return;
+		}
+		span.textContent = formatDuration(duration, {locale: de});
+	}
+	setInterval(updateTime, 1000);
+	updateTime();
+</script>
 
 <style>
 	h1 {
@@ -40,5 +83,13 @@ import Card from '../components/Card.astro';
 		gap: 1rem;
 		padding: 0;
 		margin: 0;
+		margin-bottom: 1rem;
 	}
+	.ticket-sale-start {
+		max-width: 50ch;
+		margin-bottom: 1rem;
+	}
+	.ticket-start-countdown {
+	}
+
 </style>

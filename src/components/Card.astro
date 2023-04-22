@@ -1,24 +1,34 @@
 ---
 export interface Props {
 	title: string;
-	body: string;
 	href?: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title } = Astro.props;
 ---
 
-<li class={`link-card ${href === undefined ? "no-click": undefined}`}>
-	<a href={href}>
+<div class={`link-card ${href ? "link-card-hover": undefined}`}>
+	{href ?
+	<a href={href} class="container">
 		<h2>
 			{title}
-			<span>&rarr;</span>
+			{href && <span>&rarr;</span>}
 		</h2>
 		<p>
-			{body}
+			<slot />
 		</p>
-	</a>
-</li>
+	</a> : 
+	<div class="container">
+		<h2>
+			{title}
+			{href && <span>&rarr;</span>}
+		</h2>
+		<p>
+			<slot />
+		</p>
+	</div>
+	}
+</div>
 <style>
 	.link-card {
 		list-style: none;
@@ -33,7 +43,7 @@ const { href, title, body } = Astro.props;
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 	}
 
-	.link-card > a {
+	.link-card > .container {
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.4;
@@ -53,18 +63,12 @@ const { href, title, body } = Astro.props;
 		margin-bottom: 0;
 		color: #444;
 	}
-	.link-card:is(:hover, :focus-within) {
+	.link-card-hover:is(:hover, :focus-within) {
 		background-position: 0;
 		background-image: var(--accent-gradient);
 	}
 
-	.link-card:is(:hover, :focus-within) > a {
+	.link-card-hover:is(:hover, :focus-within) > a {
 		background-color: rgba(255, 255, 255, 0.5);
-	}
-	/* .link-card:is(:hover, :focus-within) h2 {
-		 color: rgb(var(--accent)); 
-	}*/
-	.no-click {
-		cursor: not-allowed;
 	}
 </style>
