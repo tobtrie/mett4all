@@ -5,9 +5,10 @@ import Topnav from '../components/Topnav.astro'; "../components/Topnav.astro";
 export interface Props {
 	title?: string;
 	isRoot?: boolean;
+	class?: string;
 }
 
-const { title, isRoot } = Astro.props;
+const { title, isRoot, class: className } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -27,7 +28,7 @@ const { title, isRoot } = Astro.props;
 		<header class="header">
 			<Topnav title={title} isRoot={isRoot}/>
 		</header>
-		<main class="main">
+		<main class={"main " + className?? ""}>
 			<div class="background"/>
 			<slot />
 		</main>

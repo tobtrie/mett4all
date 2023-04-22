@@ -1,19 +1,79 @@
 ---
+// import Artist from "../components/Artist.astro";
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro"
 
 ---
 
-<Layout title="Artists">
-    <Container class="height">
+<Layout title="Artists" class="main">
+    <Container class="height" fullWidth={false}>
         Comming soon...
     </Container>
+    <!-- <ul role="link" class="artists">
+        <Artist
+            name="Artistname"
+            facebook="#"
+            imageUrl="/images/Mett4All-Logo.svg"
+            instagram="#"
+            spotify="#"
+            website="#"
+        />
+        <Artist
+            name="Artistname"
+            facebook="#"
+            imageUrl="/images/Mett4All-Logo.svg"
+            instagram="#"
+            spotify="#"
+            website="#"
+        />
+        <Artist
+            name="Artistname"
+            facebook="#"
+            imageUrl="/images/Mett4All-Logo.svg"
+            instagram="#"
+            spotify="#"
+            website="#"
+        />
+        <Artist
+            name="Artistname"
+            facebook="#"
+            imageUrl="/images/Mett4All-Logo.svg"
+            instagram="#"
+            spotify="#"
+            website="#"
+        />
+        <Artist
+            name="Artistname"
+            facebook="#"
+            imageUrl="/images/Mett4All-Logo.svg"
+            instagram="#"
+            spotify="#"
+            website="#"
+        />
+    </ul> -->
 </Layout>
 
 <style>
+    .main {
+        width: 100%;
+        transition: width 3s ease;
+    }
     .height {
         padding: 2rem;
         text-align: center;
         opacity: 0.9;
+    }
+    .artists {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        justify-items: center;
+    }
+    @media screen and (min-width: 600px) {
+        .main {
+            width: 75%;
+        }
     }
 </style>

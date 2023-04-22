@@ -1,11 +1,23 @@
 <!-- TODO replace with Logos -->
 <div class="partners">
-    <a href="https://neu.waldfreibad-walbeck.de" target="_blank">
+    <a href="https://www.veltins.com/" target="_blank">
+        <img src="/images/sponsors/veltins.svg" alt="Logo Veltins" height="50"/>
+    </a>
+    <a href="https://neu.waldfreibad-walbeck.de" class="logo" target="_blank">
         <img
-            src="/images/Waldfreibad_Logo.png"
+            src="/images/sponsors/Waldfreibad_Logo.png"
             alt="Logo Waldfreibad Walbeck"
             height="30"
         />
+    </a>
+    <a href="https://www.vb-niers.de/homepage.html" target="_blank">
+        <img src="/images/sponsors/voba.jpg" alt="Logo Volksband an der Niers" height="50"/>
+    </a>
+    <a href="http://tonmann.de/" target="_blank">
+        <img src="/images/sponsors/tonmann.JPG" alt="Logo Tonmann" height="45" />
+    </a>
+    <a href="https://sts-finanzen.de/" target="_blank">
+        <img src="/images/sponsors/sts_schumacher.png" alt="Logo Tonmann" height="40" />
     </a>
 </div>
 <style>
@@ -14,14 +26,17 @@
         justify-content: space-evenly;
         gap: 1rem;
         margin: 1rem;
+        flex-wrap: wrap;
     }
-    a {
+    .logo {
         padding: 0.2rem 0.4rem;
         text-decoration: none;
         color: inherit;
         background-color: rgba(255, 255, 255, 0.5);
 		border-radius: 0.25rem;
         border: transparent solid 1px;
-        transition: border 0.3s ease
+        transition: border 0.3s ease;
+        display: flex;
+        align-items: center;
     }
 </style>
