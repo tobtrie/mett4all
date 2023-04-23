@@ -5,10 +5,12 @@ import Layout from "./Layout.astro";
 const {frontmatter} = Astro.props; 
 ---
 <Layout title={frontmatter.title}>
-    <Container>
+    <Container class="container">
         <slot />
     </Container>
 </Layout>
 <style>
-    
+    .container {
+        text-align: justify;
+    }
 </style>
