@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Partner" hidePartner class="main">
+    <ul class="list-container">
+        <li>
+            <a href="https://www.veltins.com/" target="_blank">
+                <img src="/images/sponsors/veltins.svg" alt="Logo Veltins" height="50"/>
+            </a>
+        </li>
+        <li>
+            <a href="https://neu.waldfreibad-walbeck.de" class="logo" target="_blank">
+                <img
+                    src="/images/sponsors/Waldfreibad_Logo.png"
+                    alt="Logo Waldfreibad Walbeck"
+                    height="30"
+                />
+            </a>
+        </li>
+        <li>
+            <a href="https://www.vb-niers.de/homepage.html" target="_blank">
+                <img src="/images/sponsors/voba.jpg" alt="Logo Volksband an der Niers" height="50"/>
+            </a>
+        </li>
+        <li>
+            <a href="http://tonmann.de/" target="_blank">
+                <img src="/images/sponsors/tonmann.JPG" alt="Logo Tonmann" height="45" />
+            </a>
+        </li>
+        <li>
+            <a href="https://sts-finanzen.de/" target="_blank">
+                <img src="/images/sponsors/sts_schumacher.png" alt="Logo Tonmann" height="40" />
+            </a>
+        </li>
+    </ul>
+    <h2 class="">Weitere Partner</h2>
+    <ul class="list-container">
+        <li>
+            <a href="https://www.zum-muehlenhof.de/" target="_blank">
+                <img src="/images/sponsors/Muehlenhof.png" alt="Logo Zum Mühlenhof" height="60" />
+            </a>
+        </li>
+        <li>
+            <a href="https://www.metal4nrw-radio.de/" target="_blank">
+                <img src="/images/sponsors/Metal4NRW_Radio_Logo_sw_Text.png" alt="Logo Zum Mühlenhof" height="60" />
+            </a>
+        </li>
+    </ul>
+</Layout>
+<style>
+    .main {
+        padding: 0 1rem;
+        max-width: var(--content-width);
+    }
+    h2 {
+        font-family: "Metal Mania", sans-serif;
+        text-align: center;
+        filter: drop-shadow(0.2rem 0.2rem 0.2rem white);
+    }
+    .list-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+    .list-container li {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 0.5rem;
+        border-radius: 0.4rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        .list-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>

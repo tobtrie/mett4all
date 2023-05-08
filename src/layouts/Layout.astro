@@ -6,9 +6,10 @@ export interface Props {
 	title?: string;
 	isRoot?: boolean;
 	class?: string;
+	hidePartner?: boolean
 }
 
-const { title, isRoot, class: className } = Astro.props;
+const { title, isRoot, class: className, hidePartner= false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -33,7 +34,7 @@ const { title, isRoot, class: className } = Astro.props;
 			<slot />
 		</main>
 		<footer>
-			<Partner />
+			{!hidePartner && <Partner />}
 			<Footer />
 		</footer>
 	</body>
