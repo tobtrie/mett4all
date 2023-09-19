@@ -2,15 +2,21 @@
 import Container from "../components/Container.astro";
 import Layout from "./Layout.astro";
 
-const {frontmatter} = Astro.props; 
+const { frontmatter } = Astro.props;
 ---
+
 <Layout title={frontmatter.title}>
-    <Container class="container">
-        <slot />
-    </Container>
+  <Container class="container">
+    <slot />
+  </Container>
 </Layout>
 <style>
-    .container {
-        text-align: justify;
-    }
+  .container {
+    text-align: justify;
+  }
+</style>
+<style is:global>
+  .container > *:first-child {
+    margin-top: 0;
+  }
 </style>

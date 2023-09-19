@@ -1,93 +1,108 @@
 ---
-import Layout from "../../layouts/Layout.astro"
+import Layout from "../../layouts/Layout.astro";
 const posts = await Astro.glob("./*.md");
-posts.sort((a, b) => new Date(a.frontmatter.date).getTime() - new Date(b.frontmatter.date).getTime() )
+posts.sort(
+  (a, b) =>
+    new Date(a.frontmatter.date).getTime() -
+    new Date(b.frontmatter.date).getTime()
+);
 ---
 
 <Layout title="News">
-    <div class="layout">
-        {
-            posts.filter((post) => !post.frontmatter.draft).map((post) => (
-                <div class="card">
-                    <a href={post.url}>
-                        <div class="card__picture">
-                            <span class="date">{post.frontmatter.date}</span>
-                            <strong class="title" title={post.frontmatter.title}>{post.frontmatter.title}</strong>
-                        </div>
-                        <p class="card_description">
-                            {post.frontmatter.description}
-                        </p>
-                    </a>
-                </div>
-            ))
-        }
-
-    </div>
+  <div class="layout">
+    {
+      posts
+        .filter((post) => !post.frontmatter.draft)
+        .sort(
+          (a, b) =>
+            new Date(b.frontmatter.date).getTime() -
+            new Date(a.frontmatter.date).getTime()
+        )
+        .map((post) => (
+          <div class="card">
+            <a href={post.url}>
+              <div class="card__picture">
+                <span class="date">
+                  {new Date(post.frontmatter.date).toLocaleDateString(
+                    undefined,
+                    { month: "2-digit", day: "2-digit", year: "numeric" }
+                  )}
+                </span>
+                <strong class="title" title={post.frontmatter.title}>
+                  {post.frontmatter.title}
+                </strong>
+              </div>
+              <p class="card_description">{post.frontmatter.description}</p>
+            </a>
+          </div>
+        ))
+    }
+  </div>
 </Layout>
 <style>
-    .layout {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-		margin: 1rem;
-    }
-    .card {
-        overflow: hidden;
-		display: flex;
-		padding: 0.25rem;
-		background-color: rgba(255, 255, 255, 0.8);
-		background-image: none;
-		background-size: 400%;
-		border-radius: 0.6rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    }
-    .card > a {
-        width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1rem 1.3rem;
-		border-radius: 0.35rem;
-		color: #111;
-		/* background-color: white; */
-		opacity: 0.8;
-    }
-	.card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-    .card:is(:hover, :focus-within) > a{
-		background-color: rgba(255, 255, 255, 0.5);
-    }
-    .card__picture {
-        height: 200px;
-        background-image: url("/images/Mett4All-Logo.svg");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+    margin: 1rem;
+  }
+  .card {
+    overflow: hidden;
+    display: flex;
+    padding: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: none;
+    background-size: 400%;
+    border-radius: 0.6rem;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+  .card > a {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 1rem 1.3rem;
+    border-radius: 0.35rem;
+    color: #111;
+    /* background-color: white; */
+    opacity: 0.8;
+  }
+  .card:is(:hover, :focus-within) {
+    background-position: 0;
+    background-image: var(--accent-gradient);
+  }
+  .card:is(:hover, :focus-within) > a {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .card__picture {
+    height: 200px;
+    background-image: url("/images/Mett4All-Logo.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
-        font-family: "Metal Mania", sans-serif;
-    }
-    .date {
-        font-size: 0.8rem;
-        background-color: rgba(207, 207, 207, 0.7);
-        padding: 0.2rem 0.4rem;
-    }
-    .title {
-        background-color: rgba(207, 207, 207, 0.7);
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        padding: 0.2rem 0.4rem;
-    }
-    .card_description {
-        text-align: justify;
-        text-overflow: ellipsis;
-    }
-
+    font-family: "Metal Mania", sans-serif;
+  }
+  .date {
+    font-size: 0.8rem;
+    background-color: rgba(207, 207, 207, 0.7);
+    padding: 0.2rem 0.4rem;
+  }
+  .title {
+    background-color: rgba(207, 207, 207, 0.7);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0.2rem 0.4rem;
+  }
+  .card_description {
+    text-align: justify;
+    text-overflow: ellipsis;
+  }
 </style>

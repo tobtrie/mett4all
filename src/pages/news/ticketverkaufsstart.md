@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/News.astro
 title: Ticketverkaufstart
-date: 23.04.2023
+date: 2023-04-23
 description: Das Warten hat ein Ende. Die ersten Bands werden bekannt gegeben. Um wen es sich handelt erfahrt ihr hier.
 draft: false
 ---
