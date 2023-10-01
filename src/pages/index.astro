@@ -4,58 +4,52 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout isRoot={true} class="layout">
-	<header class="location">
-		<h1>23.09.2023</h1>
-		<h2>Waldfreibad Walbeck</h2>
-	</header>
-	<ul role="list" class="link-card-grid">
-		<Card title="Tickets" href="https://mett4all.ticket.io/">
-			Werde Teil und erlebe das Mett4All Festival Haut nah
-		</Card>
-		<Card href="/artists" title="Artists">
-			Bleib auf dem Laufenden mit dem Line-Up für 2023
-		</Card>
-		<Card href="/infos" title="Infos">
-			Hole dir die neusten Informationen zum Festival
-		</Card>
-		<Card href="/news" title="News">
-			Bleib auf dem laufenden mit den aktuellen News zum Festival
-		</Card>
-	</ul>
+  <header class="location">
+    <h1>23.09.2023</h1>
+    <h2>Waldfreibad Walbeck</h2>
+  </header>
+  <ul role="list" class="link-card-grid">
+    <Card title="Tickets" href="https://mett4all.ticket.io/">
+      Werde Teil und erlebe das Mett4All Festival Haut nah
+    </Card>
+    <Card href="/artists" title="Artists">
+      Bleib auf dem Laufenden mit dem Line-Up für 2023
+    </Card>
+    <Card href="/infos" title="Infos">
+      Hole dir die neusten Informationen zum Festival
+    </Card>
+    <Card href="/news" title="News">
+      Bleib auf dem laufenden mit den aktuellen News zum Festival
+    </Card>
+  </ul>
 </Layout>
 <style>
-	.layout {
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
-	}
+  .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-	.location * {
-		font-family: "Metal Mania", sans-serif;
-		text-align: center;
-		margin: 0;
-		filter: drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 2px #fff)
-			drop-shadow(0px 0px 2px #fff);
-	}
+  .location * {
+    font-family: "Metal Mania", sans-serif;
+    text-align: center;
+    margin: 0;
+    filter: drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 2px #fff)
+      drop-shadow(0px 0px 2px #fff);
+  }
 
-	/* h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-		text-align: center;
-	} */
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-		margin: 0;
-		margin-bottom: 1rem;
-	}
-	.ticket-sale-start {
-		max-width: 50ch;
-		margin-bottom: 1rem;
-	}
-	.ticket-start-countdown {
-	}
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .ticket-sale-start {
+    max-width: 50ch;
+    margin-bottom: 1rem;
+  }
+  .ticket-start-countdown {
+  }
 </style>

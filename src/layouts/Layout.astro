@@ -1,123 +1,133 @@
 ---
-import Footer from '../components/Footer.astro';
-import Partner from '../components/Partner.astro';
-import Topnav from '../components/Topnav.astro'; "../components/Topnav.astro";
+import Footer from "../components/Footer.astro";
+import Partner from "../components/Partner.astro";
+import Topnav from "../components/Topnav.astro";
+("../components/Topnav.astro");
 export interface Props {
-	title?: string;
-	isRoot?: boolean;
-	class?: string;
-	hidePartner?: boolean
+  title?: string;
+  isRoot?: boolean;
+  class?: string;
+  hidePartner?: boolean;
 }
 
-const { title, isRoot, class: className, hidePartner= false } = Astro.props;
+const { title, isRoot, class: className, hidePartner = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="de">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/images/Mett4All-Logo.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title ?? "Mett4All e.V."}</title>
-		<meta name="description" content="Mett4All e.V. ist ein Verein zur Förderung von Kunst und Kultur den Bereichen Metal/Rock/Punk/Alternative/Indie. Dazu veranstaltet der Verein jährlich ein Festival. Besonders an diesem Festival ist neben der Musik auch das im Ticket enthaltene Mettbrunching."/>
-		<link href="/css/fontawesome.css" rel="stylesheet">
-		<link href="/css/brands.css" rel="stylesheet">
-		<link href="/css/solid.css" rel="stylesheet">
-	</head>
-	<body class="body">
-		<header class="header">
-			<Topnav title={title} isRoot={isRoot}/>
-		</header>
-		<main class={"main " + className?? ""}>
-			<div class="background"/>
-			<slot />
-		</main>
-		<footer>
-			{!hidePartner && <Partner />}
-			<Footer />
-		</footer>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/images/Mett4All-Logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ?? "Mett4All e.V."}</title>
+    <meta
+      name="description"
+      content="Mett4All e.V. ist ein Verein zur Förderung von Kunst und Kultur den Bereichen Metal/Rock/Punk/Alternative/Indie. Dazu veranstaltet der Verein jährlich ein Festival. Besonders an diesem Festival ist neben der Musik auch das im Ticket enthaltene Mettbrunching."
+    />
+    <link href="/css/fontawesome.css" rel="stylesheet" />
+    <link href="/css/brands.css" rel="stylesheet" />
+    <link href="/css/solid.css" rel="stylesheet" />
+  </head>
+  <body class="body">
+    <header class="header">
+      <Topnav title={title} isRoot={isRoot} />
+    </header>
+    <main class={("main " + (className ?? "")).trim()}>
+      <div class="background"></div>
+      <slot />
+    </main>
+    <footer>
+      {!hidePartner && <Partner />}
+      <Footer />
+    </footer>
+  </body>
 </html>
 <style>
-	.body {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-	.background {
-        position: fixed;
-        background-image: url("/images/Mett4All-Logo.svg");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: calc(100% - 5vh - 2rem);
-        width: 100%;
-        opacity: 0.5;
-        top: 5vh;
-        left: 0;
-        z-index: -1;
+  .body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .background {
+    position: fixed;
+    background-image: url("/images/Mett4All-Logo.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: calc(100% - 5vh - 2rem);
+    width: 100%;
+    opacity: 0.5;
+    top: 5vh;
+    left: 0;
+    z-index: -1;
+  }
+  .main {
+    flex: 1;
+    margin: auto;
+    margin-top: 1.5rem;
+    max-width: 150ch;
+  }
+  @media screen and (min-width: 600px) {
+    .main {
+      max-width: 600ch;
     }
-	.main {
-		flex: 1;
-		margin: auto;
-		margin-top: 1.5rem;
-		max-width: 150ch;
-	}
-	@media screen and (min-width: 600px) {
-		.main {
-			max-width: 600ch;
-		}
-	}
+  }
 </style>
 <style is:global>
-	@font-face {
-		font-family: "Metal Mania";
-		src: url("/webfonts/MetalMania-Regular.ttf");
-	}
+  @font-face {
+    font-family: "Metal Mania";
+    src: url("/webfonts/MetalMania-Regular.ttf");
+  }
 
-	:root {
-		--accent: 124, 58, 237;
-		--primary: #bf974d;
-		--primary-light:#e3b45c;
-		--accent-gradient: linear-gradient(45deg, rgba(191, 151, 77, 0.6), rgba(227, 180, 92, 0.6) 30%, rgba(255, 255, 255, 0.6) 60%);
-		--content-width: 100ch;
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	body {
-		margin: 0;
-		padding: 0;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-	a {
-		text-decoration: none;
-		color: var(--primary);
-	}
-	
-	a:hover {
-		text-decoration: underline;
-	}
+  :root {
+    --accent: 124, 58, 237;
+    --primary: #bf974d;
+    --primary-light: #e3b45c;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgba(191, 151, 77, 0.6),
+      rgba(227, 180, 92, 0.6) 30%,
+      rgba(255, 255, 255, 0.6) 60%
+    );
+    --content-width: 100ch;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: #f6f6f6;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+  a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 0.2s ease;
+  }
 
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
+  a:hover {
+    text-decoration: underline;
+    color: var(--primary-light);
+  }
 
-	.highlight {
-        font-family: "Metal Mania", sans-serif;
-        /* font-style: italic; */
-    }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
 
-	.hide {
-		display: none !important;
-	}
+  .highlight {
+    font-family: "Metal Mania", sans-serif;
+  }
+
+  .hide {
+    display: none !important;
+  }
 </style>

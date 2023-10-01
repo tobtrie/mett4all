@@ -1,99 +1,90 @@
 ---
 import Container from "../components/Container.astro";
-import Layout from "../layouts/Layout.astro"
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Unterstützung">
-    <script src="/scripts/donate-sdk.js" charset="UTF-8"></script>
-    <Container>
-        <p class="intro">
-            Wir sind kontinuierlich auf der Suche nach Spenden, die uns bei unserer Arbeit unterstützen und somit zum Gelingen unserer Vereinsarbeit und Konzerte beitragen.
-            Im Zuge der Vereinsarbeit fallen immer wieder Bürokosten an für Papier, Toner oder Neuanschaffungen wie z.B. Laserdrucker, sowie Druckkosten für Flyer/Plakate und Naturalien/Getränke für Bands für die Konzerte.
-            Sachspenden jeglicher Art, sofern nicht direkt für den Verein oder die Konzerte nutzbar, fließen in eine Tombola. Die Einnahmen kommen dem Verein zugute, wovon der Verein wiederum Neuanschaffungen tätigen kann – entweder für das Büro, die Konzerte
-        </p>
-        <p>
-            Wir bieten mehrere Möglichkeiten an, wie Sie uns unterstützen können:
-            <ol>
-                <li>
-                    <section>
-                        <header><strong>Die klassische finanzielle Unterstützung</strong></header>
-                        <p>
-                            Für eine direkte Geldspende nutzen Sie doch unsere Bankverbindung <br />
-                        </p>
-                        <p>
-                            Empfänger: Mett(4)all  e.V. <br />
-                            IBAN: DE70 3206 1384 1529 7120 02<br />
-                            BIC: GENODED1GDL<br />
-                            Verwendungszweck: Spende + Name + Adresse + PLZ + Wohnort <br />
-                            (Vollständiger Name und Adresse dienen zur Ausstellung einer Zuwendungsbescheinigung!)
-                        
-                        
-                        </p>
-                        <p>
-                            Oder spenden Sie direkt über PayPal:
-                        </p>
-                        <div id="paypal-donate-button-container" />
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <header><strong>Sachspenden</strong></header>
-                        <p>
-                            Sie haben in Ihrer Firma Werbemittel / Werbegeschenke die Sie
-                            nicht mehr benötigen? Oder Sie möchten einen Hauptpreis zu
-                            unserer Tombola zu steuern? Dann schicken Sie uns entweder
-                            einfach ein Päckchen / Paket unter der folgenden Adresse zu:
-                        </p>
-                        <p>
-                            Mett(4)all  e.V. <br />
-                            Kromsteg 40<br />
-                            47638 Straelen<br />
-                        </p>
-                        <p>
-                            Möchten Sie die Spende nicht verschicken, können wir
-                            innerhalb des Ruhrgebietes eine Abholung organisieren.
-                            Hierzu sollten Sie mit unserem Schatzmeister
-                            Jan Linßen unter
-                            <a href="mailto:finanzen@mett4all.com">finanzen@mett4all.com</a>
-                            in Kontakt treten.</p>
-                    </section>
-                </li>
-            </ol>
-        </p>
-    </Container>
+  <script src="/scripts/donate-sdk.js" charset="UTF-8"></script>
+  <Container>
+    <p class="intro">
+      Wir sind kontinuierlich auf der Suche nach Spenden, die uns bei unserer
+      Arbeit unterstützen und somit zum Gelingen unserer Vereinsarbeit und
+      Konzerte beitragen. Im Zuge der Vereinsarbeit fallen immer wieder
+      Bürokosten an für Papier, Toner oder Neuanschaffungen wie z.B.
+      Laserdrucker, sowie Druckkosten für Flyer/Plakate und Naturalien/Getränke
+      für Bands für die Konzerte. Sachspenden jeglicher Art, sofern nicht direkt
+      für den Verein oder die Konzerte nutzbar, fließen in eine Tombola. Die
+      Einnahmen kommen dem Verein zugute, wovon der Verein wiederum
+      Neuanschaffungen tätigen kann – entweder für das Büro, die Konzerte
+    </p>
+    <p>
+      Wir bieten mehrere Möglichkeiten an, wie Sie uns unterstützen können:
+      <ol>
+        <li>
+          <section>
+            <header>
+              <strong>Die klassische finanzielle Unterstützung</strong>
+            </header>
+            <p>
+              Für eine direkte Geldspende nutzen Sie doch unsere Bankverbindung <br
+              />
+            </p>
+            <p>
+              Empfänger: Mett(4)all e.V. <br />
+              IBAN: DE70 3206 1384 1529 7120 02<br />
+              BIC: GENODED1GDL<br />
+              Verwendungszweck: Spende + Name + Adresse + PLZ + Wohnort <br />
+              (Vollständiger Name und Adresse dienen zur Ausstellung einer Zuwendungsbescheinigung!)
+            </p>
+            <p>Oder spenden Sie direkt über PayPal:</p>
+            <div id="paypal-donate-button-container"></div>
+          </section>
+        </li>
+        <li>
+          <section>
+            <header><strong>Sachspenden</strong></header>
+            <p>
+              Sie haben in Ihrer Firma Werbemittel / Werbegeschenke die Sie
+              nicht mehr benötigen? Oder Sie möchten einen Hauptpreis zu unserer
+              Tombola zu steuern? Dann schicken Sie uns entweder einfach ein
+              Päckchen / Paket unter der folgenden Adresse zu:
+            </p>
+            <p>
+              Mett(4)all e.V. <br />
+              Kromsteg 40<br />
+              47638 Straelen<br />
+            </p>
+            <p>
+              Möchten Sie die Spende nicht verschicken, können wir innerhalb des
+              Ruhrgebietes eine Abholung organisieren. Hierzu sollten Sie mit
+              unserem Schatzmeister Jan Linßen unter
+              <a href="mailto:finanzen@mett4all.com">finanzen@mett4all.com</a>
+              in Kontakt treten.
+            </p>
+          </section>
+        </li>
+      </ol>
+    </p>
+  </Container>
 </Layout>
 <script>
-
-    PayPal.Donation.Button({
-        env: 'production',
-        hosted_button_id: 'BB74HKXJPQ9FE',
-        business: 'finanzen@mett4all.com',
-        image: {
-            src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
-            title: 'PayPal - The safer, easier way to pay online!',
-            alt: 'Donate with PayPal button'
-        },
-        onComplete: function (params) {
-            console.log("[PayPal Donate]", params)
-            // Your onComplete handler
-        },
-    }).render('#paypal-donate-button-container');
+  PayPal.Donation.Button({
+    env: "production",
+    hosted_button_id: "BB74HKXJPQ9FE",
+    business: "finanzen@mett4all.com",
+    image: {
+      src: "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif",
+      title: "PayPal - The safer, easier way to pay online!",
+      alt: "Donate with PayPal button",
+    },
+  }).render("#paypal-donate-button-container");
 </script>
 
 <style>
-    .intro {
-        text-align: justify;
-    }
-    a {
-        text-decoration: none;
-        color: var(--primary);
-        transition: color 0.2s ease;
-    }
-    a:hover {
-        color: var(--primary-light);
-    }
-    #paypal-donate-button-container {
-        margin-bottom: 1rem;
-    }
+  .intro {
+    text-align: justify;
+  }
+  #paypal-donate-button-container {
+    margin-bottom: 1rem;
+  }
 </style>
