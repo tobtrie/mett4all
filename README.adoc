@@ -6,17 +6,25 @@
 
 This project contains the Mett4All festival website.
 
-== TODO List
-
-* [ ] Use Tailwind
-* [ ] Add a README file
-* [ ] Configure GitHub Actions
-* [ ] Use more components
-
 == How to
 
 In this section you get all information how to build this project
 
 === Prerequirements
 
-If you want to build this project you need a NodeJS and PNPM installation.
+If you want to build this project you need a installation of https://nodejs.org[NodeJS] and https://pnpm.io/[PNPM]. After that you can install the dependencies:
+
+[source, sh]
+....
+pnpm install
+....
+
+=== Start development server
+
+To start the development server you need to run the following command:
+[source, sh]
+....
+pnpm dev
+....
+
+This start a development sever at http://localhost:4321. After that you can open your browser and start developing. This development server reloads instantly the website if your changes things.
