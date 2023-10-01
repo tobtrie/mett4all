@@ -1,0 +1,22 @@
+:toc: auto
+:author: Tobias Trienekens
+:title: Mett4All
+
+= Mett4All
+
+This project contains the Mett4All festival website.
+
+== TODO List
+
+* [ ] Use Tailwind
+* [ ] Add a README file
+* [ ] Configure GitHub Actions
+* [ ] Use more components
+
+== How to
+
+In this section you get all information how to build this project
+
+=== Prerequirements
+
+If you want to build this project you need a NodeJS and PNPM installation.
