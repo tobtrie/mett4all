@@ -1,6 +1,5 @@
 ---
 layout: ../../layouts/News.astro
-draft: false
 title: Vereinsgründung
 date: 2023-02-01
 description: Nun ist es endlich soweit. Wir können euch stolz berichten, dass wir nun als Verein auftreten werden. Nach der Idee 2020 ...
