@@ -130,4 +130,8 @@ const { title, isRoot, class: className, hidePartner = false } = Astro.props;
   .hide {
     display: none !important;
   }
+  
+  .container > *:first-child {
+    margin-top: 0;
+  }
 </style>
