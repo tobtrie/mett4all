@@ -19,7 +19,7 @@ Ihr möchtet immer aktuell informiert sein? Dann folgt und auf unseren Social Me
 
 Wir freuen uns auf euch
 
-Mit Mettingen Grüßen
+Mit mettigen Grüßen
 
 Euer Mett(4)all Team
 
