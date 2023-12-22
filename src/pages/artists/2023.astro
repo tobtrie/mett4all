@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Artist from "../../components/Artist.astro";
+
+const artists = [
+  {
+    name: "Avalanche Effect",
+    facebook: "https://www.facebook.com/AvalancheEffect",
+    img: "/src/img/bands/avalanche_effect.png",
+    instagram: "https://www.instagram.com/avalancheeffect/",
+    spotify: "https://open.spotify.com/artist/1lhzMZn54qAGcj8hdoMCCb",
+    website: "https://linktr.ee/avalancheeffect",
+    youtube: "https://www.youtube.com/@AvalancheEffect",
+  },
+  {
+    name: "Call of Charon",
+    facebook: "https://www.facebook.com/callofcharon/",
+    img: "/src/img/bands/Call_of_Charon.jpg",
+    instagram: "https://www.instagram.com/callofcharon/",
+    spotify: "https://open.spotify.com/artist/2vWCnf6why3xveo17IPuyC",
+    website: "https://www.callofcharon.com",
+    youtube: "https://www.youtube.com/callofcharon",
+  },
+  {
+    name: "Dying Breed",
+    facebook: "https://de-de.facebook.com/dyingbreedofficial",
+    img: "/src/img/bands/Dying_Bread.jpg",
+    instagram: "https://www.instagram.com/dyingbreed_official/",
+    spotify: "https://open.spotify.com/artist/0LXjo0cznBz3cMf3JlZfEE",
+    website: "https://linktr.ee/Dying_Breed",
+    youtube: "https://www.youtube.com/@dyingbreed1469",
+  },
+  {
+    name: "Fool The Masses",
+    facebook: "http://www.facebook.com/foolthemasses",
+    img: "/src/img/bands/Fool_The_Masses.jpg",
+    instagram: "https://instagram.com/fool_the_masses",
+    spotify: "https://open.spotify.com/artist/2CTORUQRYqVzjss1yLtSPt",
+    website: "https://www.foolthemasses.com/",
+    youtube: "https://www.youtube.com/channel/UC1-ko3OJglOZhbDBYYxduzw",
+  },
+  {
+    name: "Ignition",
+    facebook: "http://www.facebook.com/ignitionmetalmusic/",
+    img: "/src/img/bands/Ignition.jpg",
+    instagram: "http://instagram.com/ignition_metal_official",
+    youtube: "https://www.youtube.com/channel/UC35IM-7QIxsu0wYtjg7NUug",
+    website: "https://www.ignitionmetalmusic.com/",
+    class: "image__contain image__black",
+  },
+  {
+    name: "Messticator",
+    facebook: "https://www.facebook.com/messticator/",
+    img: "/src/img/bands/messticator.jpg",
+    instagram: "https://www.instagram.com/messticator_metal/",
+    spotify: "https://open.spotify.com/artist/1wqajM8rK4UoXqxzrVNkd9",
+    youtube: "https://www.youtube.com/@messticatormetal",
+    website: "https://linktr.ee/messticator",
+  },
+  {
+    name: "Motorjesus",
+    facebook: "http://www.facebook.com/pages/MOTORJESUS/216681081186",
+    img: "/src/img/bands/Motorjesus.jpg",
+    instagram: "https://www.instagram.com/motorjesus_official/",
+    spotify: "https://open.spotify.com/artist/5ZD2aRanslnMOZ7EO9Onde",
+    youtube: 'https://www.youtube.com/results?search_query=motorjesus',
+    website: "http://motorjesus.net/",
+  },
+  {
+    name: "Neurotox",
+    facebook: "https://www.facebook.com/NeurotoxBand/",
+    img: "/src/img/bands/neurotox.png",
+    youtube: "https://www.youtube.com/NeurotoxBandTV",
+    instagram: "https://www.instagram.com/neurotox_band_offiziell/",
+    spotify: "https://open.spotify.com/artist/2vbd0sb602QVub6XTPm7bS",
+    website: "https://www.neurotox.eu/",
+  },
+  {
+    name: "Never Back Down",
+    facebook: "https://www.facebook.com/neverbackdowngermany/",
+    img: "/src/img/bands/Never_Back_Down.jpg",
+    instagram: "https://www.instagram.com/neverbackdownger/",
+    youtube: "https://www.youtube.com/channel/UCkFH-q35E8jSM3slVKbrc9A",
+    spotify: "https://open.spotify.com/artist/4qyWns3YuVTcRBu3tLfZyS",
+    website: "https://linktr.ee/neverbackdownger",
+  },
+  {
+    name: "Painata",
+    facebook: "https://www.facebook.com/slamparty",
+    img: "/src/img/bands/Painata.jpg",
+    instagram: "https://www.instagram.com/painata_deathparty/",
+  },
+  {
+    name: "We Are Perspectives",
+    facebook: "https://www.facebook.com/weareperspectives",
+    img: "/src/img/bands/We_Are_Perspectives.jpg",
+    instagram: "https://www.instagram.com/perspectivesmusic/",
+    spotify: "https://open.spotify.com/artist/7LiYrCrbd16SPtQUDnLNms",
+    website: "https://perspectivesmusic.jimdofree.com/music/",
+    youtube: "https://www.youtube.com/@weareperspectives4060",
+  },
+  {
+    name: "We awake",
+    img: "/src/img/bands/We_Awake.jpg",
+    facebook: "https://www.facebook.com/WeAwakeOfficial/",
+    youtube: "https://www.youtube.com/channel/UC61_0DgILqPP1-zGVtroN4w",
+    spotify: "https://open.spotify.com/artist/6FtQYaOlSYRYSPfzOYl3dW",
+    instagram: "https://www.instagram.com/weawakeofficial/",
+    website: "https://linktr.ee/weawakeofficial",
+  },
+];
+---
+
+<BaseLayout title="Mett4All 2023">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {artists.map((artist) => <Artist {...artist} />)}
+  </div>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+interface Props {
+  showHome?: boolean;
+}
+const { showHome = false } = Astro.props;
+---
+
+<nav class="flex flex-row gap-2 p-4 justify-between">
+  <span class:list={{invisible: !showHome}}>
+        <a href="/">
+          <img src="/img/Mett4All-Logo.svg" width="75rem" />
+        </a>
+  </span>
+  <slot/>
+  <div class="justify-self-end text-xl flex flex-row gap-2 justify-end items-start flex-wrap">
+    <a
+      class="transition-colors hover:text-orange-400"
+      href="https://www.instagram.com/mett4all.festival"
+      target="_blank"
+    >
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a
+      class="transition-colors hover:text-orange-400"
+      href="https://www.facebook.com/profile.php?id=100089882888068"
+      target="_blank"
+    >
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a
+      id="spotify-playlist"
+      class="transition-colors hover:text-orange-400"
+      href="https://open.spotify.com/playlist/6RdZQGdmmywnTkzLSNZfiD?si=S5CBR3dnRLKFakGN6i0zVQ"
+      target="_blank"
+    >
+      <i class="fa-brands fa-spotify"></i>
+    </a>
+  </div>
+</nav>

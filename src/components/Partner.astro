@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+
+
+interface Props {
+  href: string;
+  class?: string;
+  src: string;
+  alt: string;
+  height?: string;
+}
+
+const { href, class: classList, src, alt } = Astro.props;
+const images: any = import.meta.glob("/src/img/sponsors/*.{svg,jpg,JPG,jpeg,png,PNG}")
+---
+
+<a href={href} target="_blank" class={classList}>
+    <Image src={images[src]()} alt={alt} height="50"/>
+</a>

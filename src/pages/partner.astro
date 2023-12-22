@@ -1,0 +1,26 @@
+---
+import PremiumSponsor from "../components/PremiumSponsor.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Card from "../components/Partner.astro";
+---
+
+<BaseLayout title="Partner" hidePartner>
+    <PremiumSponsor />
+    <section>
+        <header>
+            <h2 class="text-4xl font-hero text-center text-highlight">Weitere Partner</h2>
+        </header>
+        <main class="flex flex-row flex-wrap gap-4 justify-evenly">
+            <Card class="bg-white/70 p-1 rounded" href="https://www.zum-muehlenhof.de/" src="/src/img/sponsors/Muehlenhof.png" alt="Logo Zum Mühlenhof" height="50" />
+            <Card href="https://www.metal4nrw-radio.de/" src="/src/img/sponsors/Metal4NRW_Radio_Logo_sw_Text.png" alt="Logo Metal4NRW Radio" height="50" />
+            <Card class="bg-white/70 rounded p-1" href="https://www.airworks.biz/" src="/src/img/sponsors/Airworks.svg" alt="Logo Airworks" height="50" />
+            <Card href="https://www.pollmannflug.de/" src="/src/img/sponsors/pollman-reisen.jpg" alt="Logo Pollman Flugreisen" height="50" />
+            <Card href="https://www.baalphemor.de/" src="/src/img/sponsors/Baalphemor.png" alt="Logo Baalphemor" height="50" />
+            <Card class="bg-white/70 rounded p-1" href="https://www.dhg-vertrieb.com/" src="/src/img/sponsors/DHG.png" alt="Logo DHG Vertriebs- & Consultinggesellschaft mbH" height="50" />
+            <Card href="https://tischlerei-theunissen.de/" src="/src/img/sponsors/theunissen.jpg" alt="Logo Tischlerei Christoph Theunissen" height="50" />
+            <Card href="https://www.keibeton.de/" src="/src/img/sponsors/keibeton.jpeg" alt="Logo Kei Betonwaren GmbH" height="50" />
+        </main>
+    </section>
+
+</BaseLayout>

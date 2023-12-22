@@ -1,0 +1,63 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Footer from "../components/Footer.astro";
+import MainTop from "../components/MainTop.astro";
+import PremiumSponsor from "../components/PremiumSponsor.astro";
+
+interface Props {
+  title?: string;
+  hidePartner?: boolean
+}
+const { title, hidePartner = false } = Astro.props;
+---
+
+<html lang="de" class="min-h-screen" transition:animate="none">
+  <head>
+    <title>{title ?? "Mett4All"}</title>
+    <link rel="icon" type="image/svg+xml" href="/img/Mett4All-Logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link href="/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/css/brands.min.css" rel="stylesheet" />
+    <link href="/css/solid.min.css" rel="stylesheet" />
+    <ViewTransitions />
+  </head>
+  <body class="flex flex-col min-h-screen max-h-screen bg-orange-50 gap-4 bg-logo bg-scroll">
+    <MainTop showHome={title !== undefined} transition:animate="none" transition:name="menu">
+      {
+        (title !== undefined) ? (
+          <span class="text-5xl justify-self-center text-center flex-1 font-hero">{title}</span>
+        ) : (
+          <img
+            src="/img/Mett4All-Logo-Text.svg"
+            class="justify-self-center"
+            width="200ch"
+          />
+        )
+      }
+    </MainTop>
+    <main class="flex-1 container mx-auto overflow-auto" transition:animate="slide">
+      <slot />
+      {!hidePartner && <PremiumSponsor/>}
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .bg-logo {
+    @apply bg-no-repeat bg-center;
+    background-image: url("/img/background-image.svg");
+  }
+</style>
+<style is:global>
+  @font-face {
+    font-family: 'MetalMania';
+    src: url('/webfonts/MetalMania-Regular.ttf');
+  }
+
+  .text-highlight {
+    filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff);
+  }
+</style>

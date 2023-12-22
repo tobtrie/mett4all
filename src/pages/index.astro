@@ -1,2 +1,30 @@
+---
+import Card from "../components/Card.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
 
-<h1 class="text-2xl">Hello Astro</h1>
+<BaseLayout>
+  <div class="flex flex-col items-center gap-8">
+    <div class="flex flex-col font-hero text-center text-3xl font-bold text-highlight">
+      <span>21.09.2024</span>
+      <span>Waldfreibad Walbeck</span>
+    </div>
+    <section class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <Card title="Tickets" href="https://mett4all.ticket.io/">
+        Werde Teil und erlebe das Mett4All Festival Haut nah
+      </Card>
+      <Card title="Artists" href="/artists">
+        Bleib auf dem Laufenden mit dem Line-Up für 2024
+      </Card>
+      <Card title="Infos" href="/infos">
+        Hole dir die neusten Informationen zum Festival
+      </Card>
+      <Card title="News" href="/news">
+        Bleib auf dem laufenden mit den aktuellen News zum Festival
+      </Card>
+      <Card title="Über uns" href="/about">
+        Erfahre wie alles began
+      </Card>
+    </section>
+  </div>
+</BaseLayout>

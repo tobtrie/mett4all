@@ -1,0 +1,179 @@
+---
+import Accordion from "../components/Accordion.astro";
+import TextContainer from "../components/TextContainer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Informationen">
+  <div class="flex gap-4 flex-col">
+    <TextContainer>
+      <header class="font-hero text-2xl">Festival Info</header>
+      <Accordion title="Datum / Location">
+        <p>
+          Das Festival <span class="font-hero">Mett(4)all</span> findet am <span
+            class="font-hero">21.09.2024</span
+          > im <span class="font-hero">Waldfreibad Walbeck</span> statt.
+        </p>
+      </Accordion>
+      <Accordion title="Anreise">
+        <div class="grid grid-cols-2 gap-2">
+          <section>
+            <h4 class="font-semibold">Mit dem Auto</h4>
+            <div>
+              Am Freibad 24<br />
+               47608 Geldern Walbeck<br />
+              <p class="mb-2">
+                Parkplätze sind vor Ort reichlich vorhanden. Wir bieten die
+                Parkplätze kostenfrei an. Wir freuen uns aber über Spenden.
+              </p>
+              <dl>
+                <dt>A40</dt>
+                <dd class="pl-4">
+                  Aus Richtung Ruhrgebiet kommend fahrt ihr am besten über die
+                  Abfahrt 4 Straelen/ Wachtendonk. Von dort aus fahrt ca. 20 min
+                  über die Landstraße zum Gelände.
+                </dd>
+                <dt>A57</dt>
+                <dd class="pl-4">
+                  Aus dem Kreis Kleve / Wesel fahrt ihr über die Abfahrt 3 Goch
+                  über Weeze/Kevelaer (ca 30 min ab Goch)
+                </dd>
+                <dt>A61</dt>
+                <dd class="pl-4">
+                  Aus Richtung Viersen kommend fahrt ihr über die Abfahrt 2
+                  Kaldenkirchen Richtung Straelen (ca. 30 min)
+                </dd>
+              </dl>
+            </div>
+          </section>
+          <section>
+            <h4 class="font-semibold">Mit dem Bus</h4>
+            <div>
+              Bushaltestelle Waldfreibad Geldern <br />
+               Buslinie RUF 35 ab Geldern-Bahnhof <br />
+              <p>
+                Im Ortskern 47608 Geldern befindet sich ein Bahnhof, von dort
+                aus gelangt ihr zum Veranstaltungsort Waldfreibad Walbeck (ca.
+                30 min). Beachtet die Fahrpläne am Wochenende.
+              </p>
+            </div>
+          </section>
+        </div>
+      </Accordion>
+      <Accordion title="Bezahlen">
+        <p>Wir überarbeiten unser Bezahlverfahren.</p>
+      </Accordion>
+      <Accordion title="Altersbeschränkung">
+        <p>
+          Das Festival ist für alle Personen ab 18. Jahren. Für Personen, ab 16.
+          Jahren, sind die unten beschriebenen Auflagen zu erfüllen (siehe
+          Jugendschutz).
+        </p>
+      </Accordion>
+      <Accordion title="Übernachtung / Camping">
+        <p>
+          Wenn eure Anreise zu weit ist oder ihr euch an ein paar kühlen
+          hopfen&shy;haltigen Getränken erfreuen wollt, könnt ihr auch gerne bei
+          uns übernachten. Der Zeltplatz ist vom <span class="font-hero"
+            >20.09.2024 17:00 Uhr</span
+          > bis zum <span class="font-hero">22.09.2024 13:00 Uhr</span>
+           für euch geöffnet.
+        </p>
+        <section>
+          <h4>Wohnmobile</h4>
+           Wohnmobilplätze sind vor Ort verfügbar und können direkt dort gebucht
+          werden. Preisliste könnt ihr
+          <a href="https://neu.waldfreibad-walbeck.de/" target="_blank">hier</a>
+           einsehen.
+        </section>
+        <section>
+          <h4>Zelten</h4>
+           Es wird auch in Zeltplatz angeboten werden. Dafür wird ein
+          Zustatzticket angeboten. Für weitere Informationen zum Ticket schaut
+          bitte bei den <a href="https://mett4all.ticket.io/">Tickets</a>
+           vorbei.
+        </section>
+      </Accordion>
+    </TextContainer>
+    <TextContainer>
+      <header class="font-hero text-2xl">Ticket Info</header>
+      <Accordion title="Wie bekomme ich Tickets?">
+        <p>
+          Am <strong>01.05.2023</strong> wird der Ticketverkauf gestartet und
+          der Link dort hin freigeschaltet. Von unserer <a href="/"
+            >Startseite</a
+          >
+           gelangt ihr ganz einfach zum Ticketshop, wo ihr eurer Festivalticket
+          bestellen könnt.
+        </p>
+      </Accordion>
+      <Accordion title="Festivalbändchen">
+        <p>
+          Dein Festivalbändchen ist im Ticketpreis mit inbegriffen. Du erhälst
+          es bei deiner Ankunft.
+        </p>
+      </Accordion>
+    </TextContainer>
+    <TextContainer>
+      <header class="font-hero text-2xl">FAQ</header>
+      <Accordion title="Drogen / Alkohol">
+        <p>
+          Illegale Substanzen sind bei uns nicht erwünscht. Auch das Mitbringen
+          von Alkohol ist untersagt. Wir bieten euch auf dem Festival
+          ausreichend Getränke an.
+        </p>
+      </Accordion>
+      <Accordion title="Essen">
+        <p>
+          Zu den rauen Mengen <span class="font-hero">Mett</span>, bieten wir
+          euch verschiedene andere Essens&shy;an&shy;ge&shy;bote an, wobei für
+          jeden etwas dabei sein wird. Von Veganer, Vegetarier oder unseren
+          lieblingen Omnivoren.
+        </p>
+      </Accordion>
+      <Accordion title="Geldautomaten">
+        <p>
+          Aktuell stehen alle Geldautomaten in Walbeck wegen Sprengungen nicht
+          zur Verfügung. Die Volksbank rüstet diese nach. Die
+          Sparkassen&shy;automaten hingegen werden nicht erneuert. Die nächsten
+          Geldautomaten sind in Geldern zu finden. Auf dem Festival können die
+          Wertmarken jedoch auch mit Kartenzahlung erstanden werden.
+        </p>
+      </Accordion>
+      <Accordion title="Glasflaschen">
+        <p>
+          Glasflaschen sind aus Sicherheitsgründen auf dem kompletten Gelände
+          verboten. Bitte haltet euch daran.
+        </p>
+      </Accordion>
+      <Accordion title="Jugendschutz">
+        Aus Jugendschutzgründen dürfen wir leider nur Gäste ab 18 Jahren auf das
+        Gelände lassen (Ausweis mitbringen!). Ausnahme: ein
+        Er&shy;ziehungs&shy;be&shy;recht&shy;igter oder eine sogenannte <i
+          >„erziehungsbeauftragte Person“</i
+        >
+         ist dabei. Ein Nachweis (<a href="/muttizettel.pdf" target="_blank"
+          >Jugendschutzformular</a
+        >) ist erforderlich.
+      </Accordion>
+      <Accordion title="Rassismus">
+        Rassismus, Sexismus und Extremismus in jedweder Form, wird bei uns nicht
+        toleriert.
+      </Accordion>
+      <Accordion title="Security">
+        Es ist ganz einfach: Seid nett zu ihnen, dann sind Sie nett zu Euch!
+      </Accordion>
+      <Accordion title="Toiletten">
+        Diese sind auf dem Festivalgelände in ausreichender Anzahl vorhanden.
+      </Accordion>
+      <Accordion title="Waffen">
+        Waffen sind <span class="font-semibold">nicht</span> erlaubt. Lasst das Zeug bitte am
+        besten gleich daheim!
+      </Accordion>
+      <Accordion title="Zigaretten">
+        Die Raucher müssen sich ihre Kippen selber mitbringen, weil wir auf dem
+        Gelände keine anbieten.
+      </Accordion>
+    </TextContainer>
+  </div>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+    <div class="rounded-lg bg-white/80 p-4">
+        <slot />
+    </div>
+</BaseLayout>
+<style is:global>
+    p {
+        margin: 1rem 0;
+    }
+</style>

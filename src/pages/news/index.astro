@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = await Astro.glob("./*.md");
+
+---
+
+<BaseLayout title="News">
+  <div class="grid gap-4" style="grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));">
+    {
+      posts.sort((a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime()).map((post) => (
+        <a href={post.url} class="rounded-lg p-4 bg-white/90 shadow-md border-2 border-transparent hover:border-orange-200 hover:bg-orange-100/95 hover:shadow-orange-200">
+            <img src="/img/Mett4All-Logo.svg" class="mx-auto h-28 md:h-52"/>
+            <div class="font-semibold">{post.frontmatter.title}</div>
+            <p class="text-justify my-1">{post.frontmatter.description}</p>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

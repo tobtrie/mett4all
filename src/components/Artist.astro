@@ -1,0 +1,40 @@
+---
+import {Image} from "astro:assets";
+
+interface Props {
+  name: string;
+  img: string;
+  website?: string;
+  spotify?: string;
+  instagram?: string;
+  youtube?: string;
+  facebook?: string;
+}
+
+const { name, img } = Astro.props;
+const images: any = import.meta.glob("/src/img/bands/*.{svg,jpg,JPG,jpeg,png,PNG}")
+---
+
+<section
+  class="rounded-lg bg-white flex flex-col justify-end items-center bg-cover bg-no-repeat bg-center relative"
+>
+  <Image src={images[img]?.() ?? ""} alt={name} class="h-60 rounded-t"/>
+  <div class="w-full text-center font-hero">{name}</div>
+  <div class="w-full flex flex-row justify-evenly">
+    <a class="transition-colors hover:text-orange-400" target="_blank">
+      <i class="fa-regular fa-globe"></i>
+    </a>
+    <a class="transition-colors hover:text-orange-400" target="_blank">
+      <i class="fa-brands fa-spotify"></i>
+    </a>
+    <a class="transition-colors hover:text-orange-400" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a class="transition-colors hover:text-orange-400" target="_blank">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a class="transition-colors hover:text-orange-400" target="_blank">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+  </div>
+</section>
