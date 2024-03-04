@@ -133,6 +133,13 @@ import Layout from "../layouts/Layout.astro";
         />
       </a>
     </li>
+    <li>
+      <a class="text-link" href="https://huepfburg-wachtendonk.de/" target="_blank">
+        <img src="/images/sponsors/huepfbug-wachtendonk.png"
+                alt="Hüpfburg Wachtendonk"
+                height="50"/>
+      </a>
+    </li>
   </ul>
 </Layout>
 <style>
@@ -162,6 +169,13 @@ import Layout from "../layouts/Layout.astro";
     background-color: rgba(255, 255, 255, 0.8);
     padding: 0.5rem;
     border-radius: 0.4rem;
+  }
+
+  .text-link {
+    color: inherit;
+  }
+  .text-link:hover {
+    color: var(--primary);
   }
 
   @media screen and (max-width: 600px) {
